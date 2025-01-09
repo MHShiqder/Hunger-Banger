@@ -3,6 +3,7 @@ import {
   } from "react-router-dom";
 import Root from "../Layout/Root";
 import Home from "../Pages/Home/Home";
+import Menu from "../Pages/Menu/Menu";
 
   export const router = createBrowserRouter([
     {
@@ -12,7 +13,11 @@ import Home from "../Pages/Home/Home";
         {
             path:"/",
             element:<Home></Home>
-        }
+        },
+        {
+            path:"/menu",
+            element:<Menu></Menu>
+        },
       ]
     },
   ]);

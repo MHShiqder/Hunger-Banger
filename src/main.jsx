@@ -8,6 +8,7 @@ import {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    
     <div className='max-w-screen-lg mx-auto'>
       <RouterProvider router={router} />
     </div>
