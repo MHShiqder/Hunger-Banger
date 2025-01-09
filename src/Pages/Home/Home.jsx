@@ -5,6 +5,7 @@ import PopularMenu from './PopularMenu/PopularMenu';
 import FeaturedItem from './FeaturedItem/FeaturedItem';
 import Rivews from './Reviews/Rivews';
 import { Helmet } from 'react-helmet';
+import DescriptionBanner from './DescriptionBanner/DescriptionBanner';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
             <Category></Category>
+            <DescriptionBanner></DescriptionBanner>
             <PopularMenu></PopularMenu>
             <FeaturedItem></FeaturedItem>
             <Rivews></Rivews>

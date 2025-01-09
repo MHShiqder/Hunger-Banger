@@ -5,8 +5,8 @@ import "./FeaturedItem.css"
 
 const FeaturedItem = () => {
     return (
-        <div className='feature-container my-16'>
-            <div className='bg-black bg-opacity-30 py-8'>
+        <div className='feature-container my-16 bg-center bg-cover '>
+            <div className='bg-black bg-opacity-40  py-8'>
             <div className='text-white'>
             <SectionTitle
                 SubHeading={"Check it out"}
