@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuItem from './MenuItem';
 import CoverWithImage from './CoverWithImage';
+import { Link } from 'react-router-dom';
 
 const MenuCategory = ({ img, category, title, subTitle }) => {
     return (
@@ -21,7 +22,7 @@ const MenuCategory = ({ img, category, title, subTitle }) => {
                 }
             </div>
             <div className='text-center mb-20'>
-            <button className='btn btn-outline border-0 border-b-4 border-black text-black text-lg'>Order Your Favorite Food</button>
+            <Link to={`/order/${title}`}><button className='btn btn-outline border-0 border-b-4 border-black text-black text-lg'>Order Your Favorite Food</button></Link>
             </div>
         </div>
     );

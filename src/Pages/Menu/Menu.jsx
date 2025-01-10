@@ -17,9 +17,6 @@ import drinksImage from '../../assets/menu/banner3.jpg'
 
 const Menu = () => {
     const [menu] = useMenu()
-    const distinctRoles = [...new Set(menu.map(item => item.category))];
-    console.log(distinctRoles)
-
 
     const salad = menu.filter(item => item.category == "salad")
     const drinks = menu.filter(item => item.category == "drinks")
