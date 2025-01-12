@@ -1,14 +1,20 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Footer from './Footer';
 import Header from './Header';
 
 const Root = () => {
+    const currentLocation = useLocation()
+    const noHeaderFooter=currentLocation.pathname.includes('login') ||currentLocation.pathname.includes('signIn') 
     return (
         <div>
-            <Header></Header>
+            {
+                noHeaderFooter || <Header></Header>
+            }
             <Outlet></Outlet>
-            <Footer></Footer>
+            {
+                noHeaderFooter || <Footer></Footer>
+            }
         </div>
     );
 };

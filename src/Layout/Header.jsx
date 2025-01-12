@@ -1,10 +1,25 @@
+import { useContext } from "react";
 import {  NavLink } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const Header = () => {
+    const {user,logoutUser}=useContext(AuthContext)
+    const handleLogout=()=>{
+        logoutUser()
+    }
     const links = <>
         <li><NavLink  to="/">Home</NavLink></li>
         <li><NavLink to="/menu">Our Menu</NavLink></li>
         <li><NavLink to="/order/salad">Order</NavLink></li>
+        {
+            user
+            ?<>
+            <li ><NavLink onClick={handleLogout} to="/">Log Out</NavLink></li>
+            </>
+            :<>
+            <li><NavLink to="/login">Login</NavLink></li>
+            </>
+        }
     </>
     return (
         <div className="max-w-screen-lg navbar  fixed  z-10 bg-black bg-opacity-30 text-white">
