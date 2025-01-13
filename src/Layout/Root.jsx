@@ -5,9 +5,10 @@ import Header from './Header';
 
 const Root = () => {
     const currentLocation = useLocation()
-    const noHeaderFooter=currentLocation.pathname.includes('login') ||currentLocation.pathname.includes('signIn') 
+    const noHeaderFooter = currentLocation.pathname.includes('login') || currentLocation.pathname.includes('signIn')
     return (
-        <div>
+        <div className='max-w-screen-lg mx-auto'>
+
             {
                 noHeaderFooter || <Header></Header>
             }
