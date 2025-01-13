@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../provider/AuthProvider';
 import Swal from 'sweetalert2';
+import SocialLogin from '../../Components/SocialLogin';
 const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
@@ -43,6 +44,7 @@ const Login = () => {
         }
     }
 
+
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen p-14">
@@ -82,6 +84,7 @@ const Login = () => {
                                 <button disabled={disabled} onClick={handleForm} className="btn btn-primary">Login</button>
                             </div>
                         </form>
+                        <SocialLogin></SocialLogin>
                         <p className='text-center mb-5'><small >New here? <Link to={"/signIn"}>Create A New Account</Link></small></p>
                     </div>
                 </div>

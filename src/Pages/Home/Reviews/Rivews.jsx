@@ -27,7 +27,7 @@ const Rivews = () => {
             ></SectionTitle>
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 {
-                    reviews.map(review => <SwiperSlide>
+                    reviews.map((review,idx) => <SwiperSlide key={idx}>
                         <div className='flex flex-col items-center mx-24'>
                             <Rating
                                 style={{ maxWidth: 180 }}

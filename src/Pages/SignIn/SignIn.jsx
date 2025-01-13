@@ -4,7 +4,10 @@ import { useForm } from "react-hook-form"
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import SocialLogin from "../../Components/SocialLogin";
 const SignIn = () => {
+    const axiosPublic = useAxiosPublic()
     const navigate = useNavigate()
     const { signUpUser, updateUser } = useContext(AuthContext)
     const {
@@ -27,18 +30,31 @@ const SignIn = () => {
                     .catch(error => {
                         console.log(error)
                     })
-            })
-            .catch(error=>{
-                console.log("error:",error)
-            })
+                axiosPublic.post('/user', { name, email })
+                    .then(res => {
+                        if (res.data.insertedId) {
 
-        Swal.fire({
-            title: "Signed Up Successfully!",
-            icon: "success",
-        });
-        reset()
-        navigate("/")
+                            Swal.fire({
+                                title: "Signed Up Successfully!",
+                                icon: "success",
+                            });
+                            reset()
+                            navigate("/")
+                        }
+                    })
+                    .catch(error => {
+                        console.log("error:", error)
+                    })
+            })
+            .catch(error => {
+                console.log("error:", error)
+            })
     }
+
+
+   
+
+
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen px-10">
@@ -83,6 +99,7 @@ const SignIn = () => {
                                 <input type="submit" value="Sign-Up" className="btn btn-primary" />
                             </div>
                         </form>
+                        <SocialLogin></SocialLogin>
                         <p className='text-center mb-5'><small >Already registered?<Link to={"/login"} > Go to log in </Link></small></p>
                     </div>
                 </div>
