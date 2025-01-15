@@ -10,6 +10,7 @@ import SignIn from "../Pages/SignIn/SignIn";
 import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Layout/Dashboard";
 import Cart from "../Pages/Dashboard/Cart";
+import AllUsers from '../Pages/Dashboard/AllUsers'
 
   export const router = createBrowserRouter([
     {
@@ -45,7 +46,15 @@ import Cart from "../Pages/Dashboard/Cart";
         {
           path:'cart',
           element:<Cart></Cart>,
+        },
+
+        // admin routes 
+        {
+          path:'users',
+          element:<AllUsers></AllUsers>
         }
+
+
       ]
     }
   ]);

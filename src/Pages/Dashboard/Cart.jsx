@@ -3,6 +3,7 @@ import useCart from '../../Hooks/useCart';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../Hooks/useAxiosSecure';
+import SectionTitle from '../../Components/SectionTitle';
 
 const Cart = () => {
     const [cart, refetch, isLoading] = useCart()
@@ -45,11 +46,14 @@ const Cart = () => {
                         <progress className="progress w-80 "></progress>
                     </div>
                     :
-                    <div className='p-16 '>
-                        <div className='flex justify-between mb-20'>
-                            <h2 className='text-4xl'>Items: {cart.length}</h2>
-                            <h2 className='text-4xl'>Items: {totalPrice}</h2>
-                            <button className='btn btn-accent'>Pay</button>
+                    <div className=''>
+                        <SectionTitle SubHeading={"My Cart"} Heading={"Add More ?"}></SectionTitle>
+                        <div className='flex  mb-12 mt-10'>
+                            <h2 className='text-4xl flex-1'>Total Orders: {cart.length}</h2>
+                            <h2 className='text-4xl flex-1 text-center'>Total Price: $ {totalPrice}</h2>
+                            <div className='flex-1 text-end'>
+                            <button className='btn btn-accent w-44'>Pay</button>
+                            </div>
                         </div>
                         <div className="overflow-x-auto ">
                             <table className="table ">
